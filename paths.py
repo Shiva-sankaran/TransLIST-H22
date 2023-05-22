@@ -1,10 +1,10 @@
 
 
 
-yangjie_rich_pretrain_unigram_path = '../H22.char.vec' #Path to character embeddings
-yangjie_rich_pretrain_bigram_path = '../H22.bigram.vec' #Path to bigram embeddings
-yangjie_rich_pretrain_word_path = '../H22.word.vec' #Path to word embeddings
-yangjie_rich_pretrain_char_and_word_path = '../H22_word_char_mix.txt' #Path to file with character and word embeddings
+yangjie_rich_pretrain_unigram_path = '../H22_embeds/H22.char.vec' #Path to character embeddings
+yangjie_rich_pretrain_bigram_path = '../H22_embeds/H22.bigram.vec' #Path to bigram embeddings
+yangjie_rich_pretrain_word_path = '../H22_embeds/H22.word.vec' #Path to word embeddings
+yangjie_rich_pretrain_char_and_word_path = '../H22_embeds/H22_word_char_mix.txt' #Path to file with character and word embeddings
 model_save_path = 'saved_models' #Path where trined model is to be saved
 load_model_path = 'saved_models/best_model' #Path from where trained model is to be loaded for testing
 #lk_word_path = '/data/nrao/nlp/sgns.merge.word'

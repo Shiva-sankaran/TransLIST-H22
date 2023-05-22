@@ -799,7 +799,7 @@ class DataSet(object):
                 if (setting == 'sighum-ngram') or (setting == 'sighum-shr'):
                     df = pandas.read_csv("../LREC-Data/new_LREC_data_complete.csv")
                 if (setting == 'H22'):
-                    df = pandas.read_csv("/home/shape3d/TransLIST/data/collection1_sent_rem_500.csv")
+                    df = pandas.read_csv("../H22-data/collection1_sent_rem_400.csv")
                     
                 elif setting == 'hack-ngram' :
                     df = pandas.read_csv("../LREC-Data/hack_LREC_data_complete.csv")

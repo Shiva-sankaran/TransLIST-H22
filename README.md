@@ -1,3 +1,16 @@
+# Steps to run TransLIST on H22
+Run the following commands
+* cd TransLIST-H22
+* conda env create -f tlat0.yml
+* conda activate tlat0
+* bash requirements.sh [PATH to your conda environments] (e.g. ~/anaconda3/envs)
+* python embedding_gen.py
+* python ngram_lat_gen.py
+* cp fastNLP-H22_files/dataset.py [PATH to your conda environments]/home/vp.shivasan/miniconda3/envs/tlat0/lib/python3.7/site-packages/fastNLP/core (example : cp fastNLP-H22_files/dataset.py /home/vp.shivasan/miniconda3/envs/tlat0/lib/python3.7/site-packages/fastNLP/core)
+* cd V0
+* python flat_main_bigram.py --status train --batch 4 --data_create yes
+
+
 # TransLIST : A Transformer-Based Linguistically Informed Sanskrit Tokenizer
 
 Official code for the paper ["TransLIST : A Transformer-Based Linguistically Informed Sanskrit Tokenizer](https://arxiv.org/abs/2210.11753). If you use this code please cite our paper.

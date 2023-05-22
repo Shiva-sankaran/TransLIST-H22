@@ -479,9 +479,9 @@ def load_weibo_ner(path,unigram_embedding_path=None,bigram_embedding_path=None,i
     # dev_path = os.path.join(path, 'skt.dev')
     # test_path = os.path.join(path, 'skt.test')
     
-    train_path = os.path.join(path,'collection1_train_rem_500')
-    dev_path = os.path.join(path, 'collection1_test_rem_500') # using the test as val for now
-    test_path = os.path.join(path, 'collection1_test_rem_500')
+    train_path = os.path.join(path,'collection1_train_rem_500.txt')
+    dev_path = os.path.join(path, 'collection1_test_rem_500.txt') # using the test as val for now
+    test_path = os.path.join(path, 'collection1_test_rem_500.txt')
 
     paths = {}
     paths['train'] = train_path
