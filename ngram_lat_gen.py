@@ -17,16 +17,16 @@ def create_lattice(sent):
         a = a + l + 1
     return lattices
 
-df = pd.read_csv("LREC-Data/hack_LREC_data_complete.csv")
+df = pd.read_csv("H22-Data/collection1_sent_rem_400.csv")
 inp_sents = df['input'].tolist()
-dcs_ids = df['DCS-ID'].tolist()
+dcs_ids = df['UID'].tolist()
 for i in tqdm(range(len(inp_sents))):
     sent = inp_sents[i]
     tuples = create_lattice(sent)
     if r < 1:
       tuples = random.sample(tuples,int(r*len(tuples)))
     dcs_id = dcs_ids[i]
-    with open(f'hack_lattice_files/{dcs_id}.lat','w') as g:
+    with open(f'H22_lattice_files/{dcs_id}.lat','w') as g:
         g.write('start,end,word\n')
         for t in tuples:
             g.write(f'{t[0]},{t[1]},{t[2]}\n')

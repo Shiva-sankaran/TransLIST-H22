@@ -3,11 +3,11 @@ import torch
 from torch import nn
 from tqdm import tqdm
 
-data = pandas.read_csv('./LREC-Data/hellwig_LREC_data_complete.csv')
-char_emb_path = 'hellwig_embeds/skt.char.vec'
-word_emb_path = 'hellwig_embeds/skt.word.vec'
-word_char_mix_path = 'hellwig_embeds/skt_word_char_mix.txt'
-bigram_emb_path = 'hellwig_embeds/skt.bigram.vec'
+data = pandas.read_csv('./H22-Data/collection1_sent_rem_400.csv')
+char_emb_path = 'H22_embeds/H22.char.vec'
+word_emb_path = 'H22_embeds/H22.word.vec'
+word_char_mix_path = 'H22_embeds/H22_word_char_mix.txt'
+bigram_emb_path = 'H22_embeds/H22.bigram.vec'
 characters = []
 words = []
 bigrams = []
