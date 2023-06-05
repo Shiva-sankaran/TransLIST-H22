@@ -3,7 +3,7 @@ import torch
 from torch import nn
 from tqdm import tqdm
 
-data = pandas.read_csv('H22-data/collection1_sent_rem_400.csv')
+data = pandas.read_csv('H22-data/collection_1_2_cut_150.csv')
 char_emb_path = 'H22_embeds/H22.char.vec'
 word_emb_path = 'H22_embeds/H22.word.vec'
 word_char_mix_path = 'H22_embeds/H22_word_char_mix.txt'
@@ -16,6 +16,7 @@ words1 = set()
 words2 = set()
 words3 = set()
 words4 = set()
+
 for i,row in tqdm(data.iterrows()):
         temp = list(set(list(row['input'].replace(' ','_'))))
         characters = list(set(characters+temp))

@@ -17,7 +17,7 @@ def create_lattice(sent):
         a = a + l + 1
     return lattices
 
-df = pd.read_csv("H22-data/collection1_sent_rem_400.csv")
+df = pd.read_csv("H22-data/collection_1_2_cut_150.csv")
 inp_sents = df['input'].tolist()
 dcs_ids = df['UID'].tolist()
 for i in tqdm(range(len(inp_sents))):

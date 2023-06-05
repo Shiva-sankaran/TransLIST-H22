@@ -799,8 +799,8 @@ class DataSet(object):
                 if (setting == 'sighum-ngram') or (setting == 'sighum-shr'):
                     df = pandas.read_csv("../LREC-Data/new_LREC_data_complete.csv")
                 if (setting == 'H22'):
-                    df = pandas.read_csv("../H22-data/collection1_sent_rem_400.csv")
-                    
+                    df = pandas.read_csv("../H22-data/collection_train_1_2_cut_150.csv")
+        
                 elif setting == 'hack-ngram' :
                     df = pandas.read_csv("../LREC-Data/hack_LREC_data_complete.csv")
                 elif setting == 'hack-shr':
@@ -814,7 +814,7 @@ class DataSet(object):
                 #    temp_ignore = f.readlines()
                 #ignore = [x.strip('\n') for x in temp_ignore]
         #print("entered function apply field in dataset.py...\n")
-        skipping = 0
+        # skipping = 0
         try:
             for idx, ins in tqdm(enumerate(self._inner_iter())):
                 if(extra_flag):
@@ -823,12 +823,12 @@ class DataSet(object):
                         dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']).replace('_',' '))]) ## for new_LREC
                         path_to_lattice = '../ngram_lattice_files/'+dcs_id_str+'.lat'
                     elif setting == 'H22':
-                        try:
-                            dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']))]) ## for new_LREC
-                            path_to_lattice = '/home/shape3d/TransLIST/H22_ngram_lattice_files/'+dcs_id_str+'.lat'
-                        except:
-                            skipping+=1
-                            continue
+                        # try:
+                        dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']))]) ## for new_LREC
+                        path_to_lattice = '/home/vp.shivasan/word_segmentation/TransLIST-H22/H22_lattice_files/'+dcs_id_str+'.lat'
+                        # except:
+                        #     skipping+=1
+                        #     continue
                         
                     elif setting == 'sighum-shr':
                         dcs_id_str = str(extra_conn_dcs[extra_conn_inputs.index(''.join(ins['chars']).replace('_',' '))]) ## for new_LREC
@@ -896,8 +896,8 @@ class DataSet(object):
             #    results3 = []
             #    results += results4
             #    results4 = []
-            print("NUMBER OF SKIPPED !!!!!<>")
-            print(skipping)
+            # print("NUMBER OF SKIPPED !!!!!<>")
+            # print(skipping)
         
         except Exception as e:
             if idx != -1:

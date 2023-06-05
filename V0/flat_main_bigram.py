@@ -21,7 +21,7 @@ from fastNLP.core import Trainer
 from fastNLP.core import Tester
 # from trainer import Trainer
 from fastNLP.core import Callback
-from V0.models import Lattice_Transformer_SeqLabel, Transformer_SeqLabel
+from V0.models import Lattice_Transformer_SeqLabel#, Transformer_SeqLabel5
 import torch
 import collections
 import torch.optim as optim
@@ -64,7 +64,7 @@ parser.add_argument('--test_train',default=False)
 parser.add_argument('--number_normalized',type=int,default=0,
                     choices=[0,1,2,3],help='0不norm，1只norm char,2norm char和bigram，3norm char，bigram和lattice')
 parser.add_argument('--lexicon_name',default='yj',choices=['lk','yj'])
-parser.add_argument('--update_every',default=1,type=int)
+parser.add_argument('--update_every',default=2,type=int)
 parser.add_argument('--use_pytorch_dropout',type=int,default=0)
 
 parser.add_argument('--char_min_freq',default=1,type=int)
@@ -312,6 +312,13 @@ cache_name = os.path.join('cache',(args.dataset+'_lattice'+'_only_train:{}'+
                           args.train_clip,args.number_normalized,args.char_min_freq,
                                   args.bigram_min_freq,args.word_min_freq,args.only_train_min_freq,
                                   args.number_normalized,args.lexicon_name,load_dataset_seed))
+print("DEBUG")
+dum = 0
+for k,v in datasets.items():
+    dum = 0
+    if(dum==1):
+        break
+    
 
 if args.data_create == 'yes':     
     print("Adding lattices...\n")                             
@@ -392,6 +399,9 @@ for k,v in datasets.items():
 
 
 max_seq_len = max(* map(lambda x:max(x['seq_len']),datasets.values()))
+
+with open('/home/vp.shivasan/word_segmentation/TransLIST-H22/V0/debug.txt','w') as f:
+    f.write("{}".format(max_seq_len))
 
 show_index = 4
 print('raw_chars:{}'.format(list(datasets['train'][show_index]['raw_chars'])))

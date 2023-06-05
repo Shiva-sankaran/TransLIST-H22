@@ -86,6 +86,11 @@ def equip_chinese_ner_with_lexicon(datasets,vocabs,embeddings,w_list,word_embedd
     import copy
     for k,v in datasets.items():
         v.apply_field(partial(get_skip_path,w_trie=w_trie),'chars','lexicons')
+        print("Applying hotfix")
+        for i in range(len(v)):
+            for j in range(len(v[i]['lexicons'])):
+                if(type(v[i]['lexicons'][j][2]) == float):
+                    v[i]['lexicons'][j][2] = 'NA'
         v.apply_field(copy.copy, 'chars','raw_chars')
         v.add_seq_len('lexicons','lex_num')
         v.apply_field(lambda x:list(map(lambda y: y[0], x)), 'lexicons', 'lex_s')
@@ -140,6 +145,7 @@ def equip_chinese_ner_with_lexicon(datasets,vocabs,embeddings,w_list,word_embedd
 
     for k,v in datasets.items():
         v.apply(concat,new_field_name='lattice')
+        # print(v,type(v))
         v.set_input('lattice')
         v.apply(get_pos_s,new_field_name='pos_s')
         v.apply(get_pos_e, new_field_name='pos_e')
