@@ -1,4 +1,8 @@
 # Steps to run TransLIST on H22
+
+The processed data files for collection1+collection2 can be found here: [link](https://drive.google.com/file/d/1ZetAgLwLgStYmoyTkz9ikLzz2fIvcMdp/view?usp=sharing) , You have to extract the zip file into V0/. You have to use the following command if you are using the processed data files `python flat_main_bigram.py --status train --batch 4 --data_create yes`
+
+
 Run the following commands
 * cd TransLIST-H22
 * conda env create -f tlat0.yml
