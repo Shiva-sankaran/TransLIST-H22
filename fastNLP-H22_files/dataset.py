@@ -1,6 +1,6 @@
 """
 :class:`~fastNLP.core.dataset.DataSet` 是fastNLP中用于承载数据的容器。可以将DataSet看做是一个表格，
-每一行是一个sample (在fastNLP中被称为 :mod:`~fastNLP.core.instance` )，
+每一行是一个sample (在fastNLP中被称为 :mod:`~fastNLP.core.instance` )， ds
 每一列是一个feature (在fastNLP中称为 :mod:`~fastNLP.core.field` )。
 
 .. csv-table:: Following is a demo layout of DataSet
@@ -792,14 +792,15 @@ class DataSet(object):
         #  results2 = []
         #  results3 = []
         #  results4 = []
-        idx = -1
+        idx = -1 #
         extra_flag = 0
         if(hasattr(func,'keywords')):
             if(list(func.keywords.keys())[0]=='w_trie'):
                 if (setting == 'sighum-ngram') or (setting == 'sighum-shr'):
                     df = pandas.read_csv("../LREC-Data/new_LREC_data_complete.csv")
                 if (setting == 'H22'):
-                    df = pandas.read_csv("../H22-data/collection_1_2_cut_150.csv")
+                    # df = pandas.read_csv("../H22-data/collection1_sent_Translist_cut_150.csv")
+                    df = pandas.read_csv("../H22-data/overall_test.csv")
         
                 elif setting == 'hack-ngram' :
                     df = pandas.read_csv("../LREC-Data/hack_LREC_data_complete.csv")
