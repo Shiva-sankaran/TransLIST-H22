@@ -222,6 +222,12 @@ class Absolute_Position_Embedding(nn.Module):
         return emb
 
 
+# Are there architectural changes
+# How are the lattices represented
+# Embedding for trigrams/quadgrams obtained?? 
+# 
+#
+
 
 class Lattice_Transformer_SeqLabel(nn.Module):
     def __init__(self,lattice_embed, bigram_embed, hidden_size, label_size,

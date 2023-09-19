@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 from tqdm import tqdm
-
+# python flat_main_bigram.py --status test --test_model Trained_Translist_H22 --data_create no
 r = 1 #fraction of lattice nodes per sentence
 
 def create_lattice(sent):
@@ -17,7 +17,7 @@ def create_lattice(sent):
         a = a + l + 1
     return lattices
 
-df = pd.read_csv("H22-data/collection_1_2_cut_150.csv")
+df = pd.read_csv("H22-data/zero-shot_collection3_test.csv") #overall_test.csv
 inp_sents = df['input'].tolist()
 dcs_ids = df['UID'].tolist()
 for i in tqdm(range(len(inp_sents))):
@@ -30,3 +30,6 @@ for i in tqdm(range(len(inp_sents))):
         g.write('start,end,word\n')
         for t in tuples:
             g.write(f'{t[0]},{t[1]},{t[2]}\n')
+
+## sent tarpaNo_bRMhaNo_balyo_vAtahRdroganASanaH
+# lattice = [(0,1,'ta'),(0,2,'tar'),(0,3,'tarp'),(1,2,'ar'),(1,3,'arp'),(1,4,'arpa'),...]

@@ -14,3 +14,4 @@ Run embedding_gen.py
 Run ngram_lat_gen.py
 Replace  FastNLP dataset.py with /home/vp.shivasan/word_segmentation/TransLIST-H22/fastNLP-H22_files/dataset.py
 
+find . -maxdepth 1 -name "*.lat" -print0 | xargs -0 rm

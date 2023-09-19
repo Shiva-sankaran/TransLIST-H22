@@ -3,7 +3,7 @@ import torch
 from torch import nn
 from tqdm import tqdm
 
-data = pandas.read_csv('H22-data/collection_1_2_cut_150.csv')
+data = pandas.read_csv('H22-data/zero-shot_collection3_test.csv')#'H22-data/overall_test.csv'
 char_emb_path = 'H22_embeds/H22.char.vec'
 word_emb_path = 'H22_embeds/H22.word.vec'
 word_char_mix_path = 'H22_embeds/H22_word_char_mix.txt'

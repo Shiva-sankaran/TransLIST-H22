@@ -84,6 +84,7 @@ def equip_chinese_ner_with_lexicon(datasets,vocabs,embeddings,w_list,word_embedd
 
 
     import copy
+    # datasets["train"] = datasets["test"]
     for k,v in datasets.items():
         v.apply_field(partial(get_skip_path,w_trie=w_trie),'chars','lexicons')
         print("Applying hotfix")

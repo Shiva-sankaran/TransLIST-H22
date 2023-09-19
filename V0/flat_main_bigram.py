@@ -1,7 +1,9 @@
+import os
+# os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 import fitlog
 from datetime import datetime
 import pickle
-
+# python flat_main_bigram.py --status test --test_model Trained_Translist_H22 --data_create no
 print('---------------------------------------------------')
 print('Start:'+str(datetime.now()))
 print('---------------------------------------------------')
@@ -53,7 +55,7 @@ parser.add_argument('--status',default='train',choices=['train','test'])
 parser.add_argument('--test_model')
 parser.add_argument('--msg',default='_')
 parser.add_argument('--train_clip',default=False,help='是不是要把train的char长度限制在200以内')
-parser.add_argument('--device', default='0')
+parser.add_argument('--device', default='1')
 parser.add_argument('--debug', default=0,type=int)
 parser.add_argument('--gpumm',default=False,help='查看显存')
 parser.add_argument('--see_convergence',default=False)
